@@ -11,8 +11,8 @@ resource "aws_instance" "vpn_server" {
   
   user_data = <<-EOF
               #!/bin/bash
-              echo "VPN IP: YOUR_VPN_IP_HERE"
-              echo "Username: HOUDINI\\Dcopperfield"
+              echo "VPN IP: 172.23.165.2"
+              echo "Username: HOUDINI\dcopperfield"
               echo "Password: tartans@123"
               # Additional VPN configuration here
               EOF
