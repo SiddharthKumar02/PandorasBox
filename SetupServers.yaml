@@ -1,0 +1,17 @@
+172.23.165.2
+# Ansible Playbook for Configuring VPN
+---
+- hosts: vpn_servers
+  vars:
+    vpn_ip: "172.23.165.2"
+    username: "HOUDINI\dcopperfield"
+    password: "tartans@123"
+  
+  tasks:
+    - name: Configure VPN Connection
+      win_uri:
+        url: "https://{{ vpn_ip }}/configure"
+        method: POST
+        user: "{{ username }}"
+        password: "{{ password }}"
+      delegate_to: localhost
